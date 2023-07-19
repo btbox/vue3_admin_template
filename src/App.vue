@@ -1,18 +1,17 @@
 <template></template>
 
 <script setup lang="ts">
-for (let i=0; i <10;i++)
-{
-    console.log(i)
+for (let i = 0; i < 10; i++) {
+  console.log(i)
 }
 </script>
 
 <style scoped>
-.box{
+.box {
   width: 600px;
   height: 400px;
   background: black;
-  h1{
+  h1 {
     color: white;
   }
 }
