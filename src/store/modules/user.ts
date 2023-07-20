@@ -6,7 +6,7 @@ import { reqLogin } from '@/api/user'
 import type { loginForm, loginResponseData } from '@/api/user/type.ts'
 import type { UserState } from './types/types'
 // 引入操作本地存储的工具方法
-import { SET_TOKEN, GET_TOKEN } from "@/utils/token";
+import { SET_TOKEN, GET_TOKEN } from '@/utils/token'
 
 // 创建用户小仓库
 let useUserStore = defineStore('User', {
@@ -23,9 +23,9 @@ let useUserStore = defineStore('User', {
       let result: loginResponseData = await reqLogin(data)
       if (result.code == 200) {
         // 存储 token
-        this.token = (result.data.token as string)
+        this.token = result.data.token as string
         // 本地存储
-        SET_TOKEN((result.data.token as string))
+        SET_TOKEN(result.data.token as string)
         // 能保证当前 async 函数返回一个成功的 promise
         return 'ok'
       } else {
