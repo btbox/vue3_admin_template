@@ -14,7 +14,9 @@ import 'virtual:svg-icons-register'
 // 全局组件引入
 import globalComponent from '@/components/index'
 // 引入路由
-import router from './router'
+import router from '@/router'
+// 引入仓库
+import pinia from "@/store";
 
 // 获取应用实例对象
 const app = createApp(App)
@@ -26,5 +28,7 @@ app.use(ElementPlus, {
 app.use(globalComponent)
 // 注册模板路由
 app.use(router)
+// 安装仓库
+app.use(pinia)
 // 将应用挂载到挂载点上
 app.mount('#app')
