@@ -16,7 +16,7 @@ import globalComponent from '@/components/index'
 // 引入路由
 import router from '@/router'
 // 引入仓库
-import pinia from "@/store";
+import pinia from '@/store'
 
 // 获取应用实例对象
 const app = createApp(App)

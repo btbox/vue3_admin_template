@@ -28,11 +28,9 @@ let useUserStore = defineStore('User', {
       } else {
         return Promise.reject(new Error(result.data.message))
       }
-    }
+    },
   },
-  getters: {
-
-  }
+  getters: {},
 })
 
 // 对外暴露获取小仓库方法
