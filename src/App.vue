@@ -1,18 +1,19 @@
-<template></template>
+<template>
+  <div>
+
+  </div>
+</template>
 
 <script setup lang="ts">
-for (let i = 0; i < 10; i++) {
-  console.log(i)
-}
+import { reqLogin } from "@/api/user";
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  reqLogin({
+    username: 'admin',
+    password: '111111'
+  })
+})
 </script>
 
-<style scoped>
-.box {
-  width: 600px;
-  height: 400px;
-  background: black;
-  h1 {
-    color: white;
-  }
-}
-</style>
+<style scoped></style>
