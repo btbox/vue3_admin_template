@@ -77,7 +77,7 @@ const login = async () => {
     // 登录失败提示信息
     ElNotification({
       type: 'error',
-      message: (error as Error).message,
+      message: (error as Error).message
     })
   }
 }

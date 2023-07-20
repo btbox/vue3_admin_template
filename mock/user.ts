@@ -11,7 +11,7 @@ function createUserList() {
       roles: ['平台管理员'],
       buttons: ['cuser.detail'],
       routes: ['home'],
-      token: 'Admin Token',
+      token: 'Admin Token'
     },
     {
       userId: 2,
@@ -23,8 +23,8 @@ function createUserList() {
       roles: ['系统管理员'],
       buttons: ['cuser.detail', 'cuser.user'],
       routes: ['home'],
-      token: 'System Token',
-    },
+      token: 'System Token'
+    }
   ]
 }
 
@@ -38,7 +38,7 @@ export default [
       const { username, password } = body
       //调用获取用户信息函数,用于判断是否有此用户
       const checkUser = createUserList().find(
-        (item) => item.username === username && item.password === password,
+        (item) => item.username === username && item.password === password
       )
       //没有用户返回失败信息
       if (!checkUser) {
@@ -47,7 +47,7 @@ export default [
       //如果有返回成功信息
       const { token } = checkUser
       return { code: 200, data: { token } }
-    },
+    }
   },
   // 获取用户信息
   {
@@ -64,6 +64,6 @@ export default [
       }
       //如果有返回成功信息
       return { code: 200, data: { checkUser } }
-    },
-  },
+    }
+  }
 ]
