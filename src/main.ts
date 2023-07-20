@@ -22,7 +22,7 @@ import pinia from '@/store'
 const app = createApp(App)
 // 安装 element-plus 插件
 app.use(ElementPlus, {
-  locale: zhCn,
+  locale: zhCn
 })
 // 安装自定义插件
 app.use(globalComponent)

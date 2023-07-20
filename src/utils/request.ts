@@ -3,7 +3,7 @@ import { ElMessage } from 'element-plus'
 //创建axios实例
 const request = axios.create({
   baseURL: import.meta.env.VITE_APP_BASE_API,
-  timeout: 5000,
+  timeout: 5000
 })
 //请求拦截器
 request.interceptors.request.use((config) => {
@@ -36,9 +36,9 @@ request.interceptors.response.use(
     }
     ElMessage({
       type: 'error',
-      message: msg,
+      message: msg
     })
     return Promise.reject(error)
-  },
+  }
 )
 export default request

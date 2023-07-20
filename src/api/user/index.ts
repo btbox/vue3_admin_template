@@ -3,12 +3,12 @@ import request from '@/utils/request'
 import {
   loginForm,
   loginResponseData,
-  userResponseData,
+  userResponseData
 } from '@/api/user/type.ts'
 // 统一管理接口
 enum API {
   LOGIN_URL = '/user/login',
-  USERINFO_URL = '/user/info',
+  USERINFO_URL = '/user/info'
 }
 // 暴露请求函数
 // 登录接口方法

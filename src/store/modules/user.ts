@@ -4,23 +4,23 @@ import { defineStore } from 'pinia'
 import { reqLogin } from '@/api/user'
 // 引入数据类型
 import type { loginForm, loginResponseData } from '@/api/user/type.ts'
-import type { UserState } from './types/types'
+import type { UserState } from './types/types.ts'
 // 引入操作本地存储的工具方法
 import { SET_TOKEN, GET_TOKEN } from '@/utils/token'
 
 // 创建用户小仓库
-let useUserStore = defineStore('User', {
+const useUserStore = defineStore('User', {
   // 小仓库存储数据地方
   state: (): UserState => {
     return {
-      token: GET_TOKEN(), // 用户唯一标识 token
+      token: GET_TOKEN() // 用户唯一标识 token
     }
   },
   // 异步|逻辑的地方
   actions: {
     async userLogin(data: loginForm) {
       // 登录请求
-      let result: loginResponseData = await reqLogin(data)
+      const result: loginResponseData = await reqLogin(data)
       if (result.code == 200) {
         // 存储 token
         this.token = result.data.token as string
@@ -31,9 +31,9 @@ let useUserStore = defineStore('User', {
       } else {
         return Promise.reject(new Error(result.data.message))
       }
-    },
+    }
   },
-  getters: {},
+  getters: {}
 })
 
 // 对外暴露获取小仓库方法
