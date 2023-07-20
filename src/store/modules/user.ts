@@ -10,30 +10,30 @@ import { SET_TOKEN, GET_TOKEN } from '@/utils/token'
 
 // 创建用户小仓库
 const useUserStore = defineStore('User', {
-  // 小仓库存储数据地方
-  state: (): UserState => {
-    return {
-      token: GET_TOKEN() // 用户唯一标识 token
-    }
-  },
-  // 异步|逻辑的地方
-  actions: {
-    async userLogin(data: loginForm) {
-      // 登录请求
-      const result: loginResponseData = await reqLogin(data)
-      if (result.code == 200) {
-        // 存储 token
-        this.token = result.data.token as string
-        // 本地存储
-        SET_TOKEN(result.data.token as string)
-        // 能保证当前 async 函数返回一个成功的 promise
-        return 'ok'
-      } else {
-        return Promise.reject(new Error(result.data.message))
-      }
-    }
-  },
-  getters: {}
+    // 小仓库存储数据地方
+    state: (): UserState => {
+        return {
+            token: GET_TOKEN() // 用户唯一标识 token
+        }
+    },
+    // 异步|逻辑的地方
+    actions: {
+        async userLogin(data: loginForm) {
+            // 登录请求
+            const result: loginResponseData = await reqLogin(data)
+            if (result.code == 200) {
+                // 存储 token
+                this.token = result.data.token as string
+                // 本地存储
+                SET_TOKEN(result.data.token as string)
+                // 能保证当前 async 函数返回一个成功的 promise
+                return 'ok'
+            } else {
+                return Promise.reject(new Error(result.data.message))
+            }
+        }
+    },
+    getters: {}
 })
 
 // 对外暴露获取小仓库方法
