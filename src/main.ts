@@ -19,7 +19,7 @@ import '@/styles/index.scss'
 const app = createApp(App)
 // 安装 element-plus 插件
 app.use(ElementPlus, {
-    locale: zhCn,
+  locale: zhCn,
 })
 app.use(globalComponent)
 // 将应用挂载到挂载点上
