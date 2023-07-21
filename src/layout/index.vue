@@ -16,7 +16,7 @@
         <div class="layout_tabbar"></div>
         <!-- 内容展示区域 -->
         <div class="layout_main">
-            <p style="height: 800px">123</p>
+            <Main></Main>
         </div>
     </div>
 </template>
@@ -26,6 +26,8 @@
 import Logo from './logo/index.vue'
 // 引入菜单组件
 import Menu from './menu/index.vue'
+// 右侧内容展示区域
+import Main from './main/index.vue'
 
 // 获取用户相关的小仓库
 import useUserStore from '@/store/modules/user.ts'
