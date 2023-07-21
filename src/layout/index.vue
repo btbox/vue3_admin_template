@@ -28,7 +28,7 @@ import Logo from './logo/index.vue'
 import Menu from './menu/index.vue'
 
 // 获取用户相关的小仓库
-import useUserStore from "@/store/modules/user.ts";
+import useUserStore from '@/store/modules/user.ts'
 let userStore = useUserStore()
 console.log(userStore.menuRoutes)
 </script>
